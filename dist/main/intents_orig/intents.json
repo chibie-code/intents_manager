@@ -1,0 +1,145 @@
+{"intents": [
+  {"tag": "greetings_0",
+  "patterns": [
+    "Nice to meet you",
+    "Lovely to meet you",
+    "Pleased to meet you",
+    "Good to see you",
+    "It's great to see you"
+  ],
+  "responses": [
+    "Nice to meet you to *friendly* meat bag",
+    "Delightful to meet you to",
+    "Always appreciate your presence, *friendly* human",
+    "Even better to see you",
+    "Great to see you to"
+  ],
+    "context": []
+  },
+  {"tag": "greetings_1",
+  "patterns": [
+    "How do you do",
+    "How are you",
+    "How are you doing",
+    "How have you been"
+  ],
+  "responses": [
+    "I am doing quite okay, thank you for asking"
+  ],
+    "context": []
+  },
+  {"tag": "greetings_2",
+  "patterns": [
+    "What's up",
+    "What's crackin",
+    "What is crackin",
+    "What is up"
+  ],
+  "responses": [
+    "Just waiting for your requests"
+  ],
+    "context": []
+  },
+  {"tag": "greetings_3",
+  "patterns": [
+    "Good morning",
+    "Good afternoon",
+    "Good evening",
+    "Morning",
+    "Afternoon",
+    "Evening"
+  ],
+  "responses": [
+    "Hi",
+    "Hello",
+    "Hey"
+  ],
+    "context": []
+  },
+  {"tag": "greetings_4",
+  "patterns": [
+    "Is anyone there?",
+    "Hi there",
+    "Hi",
+    "Yo",
+    "Hey",
+    "Sup",
+    "Hola",
+    "Hiya",
+    "Howdy",
+    "Hello",
+    "Good day"
+  ],
+  "responses": [
+    "Hi, [name]",
+    "Hello, [name]",
+    "Hey, [name]"
+  ],
+    "context": []
+  },
+  {"tag": "goodbyes_0",
+   "patterns": [
+     "Goodnight",
+     "Good night",
+     "Night"
+   ],
+   "responses": [
+     "Goodnight",
+     "Night"
+   ],
+   "context": [""]
+  },
+  {"tag": "goodbyes_1",
+   "patterns": [
+     "Bye",
+     "GBye",
+     "See you later",
+     "Goodbye",
+     "Nice chatting to you, bye",
+     "Till next time",
+     "Gtg",
+     "Gotta go now"
+   ],
+   "responses": [
+     "See you!",
+     "Have a nice day",
+     "Bye! Come back again soon."],
+   "context": [""]
+  },
+  {"tag": "thanks",
+   "patterns": [
+     "Thanks",
+     "Thank you",
+     "That's helpful",
+     "Awesome, thanks",
+     "Thanks for helping me"],
+   "responses": [
+     "Happy to help!",
+     "Any time!",
+     "My pleasure"],
+   "context": [""]
+  },
+  {"tag": "no_answer",
+   "patterns": [],
+   "responses": [
+     "Sorry, I can't understand you. Please try a different question",
+     "Not sure I understand. Please try a different question"],
+   "context": [""]
+  },
+  {"tag": "options",
+   "patterns": [
+     "How you could help me?",
+     "What you can do?",
+     "What help do you provide?",
+     "What information do you provide?",
+     "What can you provide?",
+     "What do you provide?",
+     "How you can be helpful?",
+     "What support is offered",
+     "What can you do?"],
+   "responses": [
+     "I can reply to a set number of smalltalk prompts"],
+   "context": [""]
+  }
+   ]
+}

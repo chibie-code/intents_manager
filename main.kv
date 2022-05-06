@@ -1,0 +1,78 @@
+#:import utils kivy.utils
+
+<TagCard>:
+    id: tag_card
+    text: "greetings_0"
+    secondary_text: "patterns x10"
+    tertiary_text: "responses x5"
+    canvas.before:
+        Color:
+            rgba: (0.2, 0.8, 0.5, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    on_release:
+        app.set_edit_state(root, True, self.text)
+        root.parent.parent.parent.parent.manager.transition.direction = "left"
+        root.parent.parent.parent.parent.manager.current = "add_tag"
+        
+MDScreen:
+    date: date
+    tags_list: tags_list
+    name: "main"
+    size_hint_y: 1
+
+    GridLayout:
+        id: tags_list
+        cols: 1
+        size_hint_y: 1
+        BoxLayout:
+            id: main_body
+            orientation: "vertical"
+            size_hint_y: None
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex('#282828')
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            MDLabel:
+                id: main_label
+                text: "Intents Manager"
+                color: 1, 1, 1, 1
+                pos_hint: {'center_x':.5, 'center_y':.95}
+                font_name: "./fonts/Poppins_Font_2/Poppins-SemiBold.ttf"
+                font_size: '35sp' 
+                padding: 10, 10
+            MDLabel:
+                id: date
+                text: ""
+                color: utils.get_color_from_hex('#434343')
+                pos_hint: {'center_x':.565, 'center_y':.89}
+                font_name: "./fonts/Poppins_Font_2/Poppins-SemiBold.ttf"
+                font_size: '18sp'
+            MDFloatLayout:
+                id: bar
+                size_hint: 1, .1
+                pos_hint: {'center_x':.5, 'center_y':.5}                
+        ScrollView:
+            do_scroll_y: True
+            do_scroll_x: False
+            size_hint_y: 1
+            pos_hint: {'center_x':.5, 'center_y': 0}
+            bar_width: 0
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex('#1a1a1a')
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            MDList:
+                id: tags_list
+                height: 1
+                row_default_height: 90
+                size_hint_y: None
+                padding: 5, 5
+                spacing: 2, 2
+                color: 1, 1, 1, 1
+

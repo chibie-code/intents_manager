@@ -1,0 +1,157 @@
+#:import utils kivy.utils
+
+MDScreen:
+    name: "add_tag"
+    MDFloatLayout:
+        md_bg_color: utils.get_color_from_hex('#282828')
+        MDIconButton:
+            icon: "chevron-left"
+            user_font_size: "40sp"
+            pos_hint: {"center_y": .95}
+            theme_text_color: "Custom"
+            text_color: utils.get_color_from_hex('#33CC7F')
+            on_release: 
+                root.manager.transition.direction = "right"
+                root.manager.current = "main"
+        MDLabel:
+            id: edit_page_label
+            text: "Edit Tag"
+            color: 1, 1, 1, 1
+            pos_hint: {"center_x":.6, "center_y":.88}
+            font_name: "./fonts/Poppins_Font_2/Poppins-SemiBold.ttf"
+            font_size: "35sp"
+            
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .5, "center_y": .78}
+            canvas:
+                Color:
+                    rgba: (238/255, 238/255, 238/255, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [5]
+            TextInput:
+                id: tag_name_input
+                hint_text:'Tag Name'
+                text: root.ids.tag_name_input.text
+                size_hint: 1, None
+                pos_hint: {"center_x": .5, "center_y": .5}
+                height: self.minimum_height
+                multiline: False
+                cursor_color: 1, 170/255, 23/255, 1
+                cursor_width: "2sp"
+                foreground_color: 0, 0, 0, 1
+                background_color: 0, 0, 0, 0
+                padding: 15
+                font_name: "./fonts/Poppins_Font_2/Poppins-Regular.ttf"
+                font_size: "18sp"
+        BoxLayout:
+            orientation: "horizontal"
+            spacing: 13
+            padding: 15
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: 0.7
+                spacing: 5
+                MDLabel:
+                    text: "Patterns"
+                    size_hint_y: 0.02
+                    color: 1, 1, 1, 1
+                ScrollView:
+                    id: pat_scroll_view
+                    size_hint_y: 1
+                    pos_hint_y: 0.1
+                    canvas.before:
+                        Color:
+                            rgba: (238/255, 238/255, 238/255, 1)
+                        RoundedRectangle:
+                            size: self.size
+                            pos: self.pos
+                            radius: [5]
+                    TextInput:
+                        id: patterns
+                        hint_text:'Patterns'
+                        size_hint_x: 1
+                        size_hint_y: None
+                        pos_hint: {"center_x": .5, "center_y": .5}
+                        height: self.minimum_height
+                        multiline: True
+                        cursor_color: 1, 170/255, 23/255, 1
+                        cursor_width: "2sp"
+                        foreground_color: 0, 0, 0, 1
+                        background_color: 0, 0, 0, 0
+                        padding: 15
+                        font_name: "./fonts/Poppins_Font_2/Poppins-Regular.ttf"
+                        font_size: "18sp"
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: 0.7
+                spacing: 5
+                MDLabel:
+                    text: "Responses"
+                    size_hint_y: 0.02
+                    color: 1, 1, 1, 1
+                ScrollView:
+                    id: res_scroll_view
+                    size_hint_y: 1
+                    pos_hint_y: 0.1
+                    canvas.before:
+                        Color:
+                            rgba: (238/255, 238/255, 238/255, 1)
+                        RoundedRectangle:
+                            size: self.size
+                            pos: self.pos
+                            radius: [5]
+                    TextInput:
+                        id: responses
+                        hint_text:'Responses'
+                        text: "line1\nline2\nline3"
+                        size_hint_x: 1
+                        size_hint_y: None
+                        pos_hint: {"center_x": .5, "center_y": .5}
+                        height: self.minimum_height
+                        multiline: True
+                        cursor_color: 1, 170/255, 23/255, 1
+                        cursor_width: "2sp"
+                        foreground_color: 0, 0, 0, 1
+                        background_color: 0, 0, 0, 0
+                        padding: 15
+                        font_name: "./fonts/Poppins_Font_2/Poppins-Regular.ttf"
+                        font_size: "18sp"
+        Button:
+            id: submit_change_btn
+            text: 'Add'
+            size_hint: .30, .08
+            pos_hint: {"center_x": .78, "center_y": .9}
+            background_color: 0, 0, 0, 0
+            font_name: "./fonts/Poppins_Font_2/Poppins-SemiBold.ttf"
+            font_size: "18sp"
+            color: 1, 1, 1, 1
+            on_release:
+                app.handle_tag()
+            canvas.before:
+                Color:
+                    rgba: (0.2, 0.8, 0.5, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [15]
+        Button:
+            id: delete_tag_btn
+            text: 'Delete'
+            size_hint: .20, .08
+            pos_hint: {"center_x": .5, "center_y": .9}
+            background_color: 0, 0, 0, 0
+            font_name: "./fonts/Poppins_Font_2/Poppins-SemiBold.ttf"
+            font_size: "18sp"
+            color: 1, 1, 1, 1
+            on_release:
+                app.handle_tag(True)
+            canvas.before:
+                Color:
+                    rgba: (0.8, 0.2, 0.5, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [15]
