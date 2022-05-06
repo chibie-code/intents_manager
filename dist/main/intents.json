@@ -138,6 +138,17 @@
             ]
         },
         {
+            "tag": "no_answer",
+            "patterns": [],
+            "responses": [
+                "Sorry, I can't understand you. Please try a different question",
+                "Not sure I understand. Please try a different question"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
             "tag": "options",
             "patterns": [
                 "How you could help me?",

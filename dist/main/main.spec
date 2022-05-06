@@ -23,8 +23,8 @@ a = Analysis(
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 a.datas += [
-('Code\main.kv', 'D:\\py_projs\\kivy_projs\\chatbot\\intents_manager\main.kv', 'DATA'),
-('Code\add_tag.kv', 'D:\\py_projs\\kivy_projs\\chatbot\\intents_manager\add_tag.kv', 'DATA')
+('Code\main.kv', 'C:\\Users\\Derek\\Documents\\kivy_projs\\intents_manager\main.kv', 'DATA'),
+('Code\add_tag.kv', 'C:\\Users\\Derek\\Documents\\kivy_projs\\intents_manager\add_tag.kv', 'DATA')
 ]
 
 exe = EXE(
@@ -46,7 +46,7 @@ exe = EXE(
 )
 coll = COLLECT(
     exe,
-    Tree('D:\\py_projs\\kivy_projs\\chatbot\\intents_manager\\'),
+    Tree('C:\\Users\\Derek\\Documents\\kivy_projs\\intents_manager\\'),
     a.binaries,
     a.zipfiles,
     a.datas,

@@ -74,6 +74,8 @@ class IntentsManager(MDApp):
     })
 
     def build(self):
+        # app icon
+        self.icon = './logo/logo_png_256.png'
         # build the app screens
         main_screen = Builder.load_file('main.kv')
         new_tag_screen = Builder.load_file('new_tag.kv')
