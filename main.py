@@ -133,6 +133,13 @@ class IntentsManager(MDApp):
         self.document = ListProperty([])
         self.doc_path = StringProperty(None)
 
+    @staticmethod
+    def del_all_children(parent=None):
+        if parent is None:
+            return False
+        [parent.remove_widget(child) for child in parent.children]
+        return True
+
     def handle_selected(self, selection):
         try:
             # confirm file type is valid(JSON)
@@ -162,6 +169,9 @@ class IntentsManager(MDApp):
                     bg_color=(1, 20 / 255, 100 / 255, 1),
                     font_size='18sp'
                 ).open()
+                return
+            # clear prev list display
+            self.del_all_children(sm.get_screen('main').tags_list)
             return
 
     def handle_import_doc(self):
