@@ -29,4 +29,4 @@ The required/recognized file type is JSON and file structure must be something l
     ]
 }
 ```
-Executable file in 'cd sample_executable'
+Executable file in 'cd /d sample_executable'
